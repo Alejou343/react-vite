@@ -18,6 +18,7 @@ const Card = (props) => {
 
         if (!isInCart) {
             return (
+            context.active && 
             <div className='absolute top-0 right-0 m-2 flex justify-center items-center bg-white w-6 h-6 rounded-full p-3 font-bold'
                 onClick = {() => addProductToCart(props.id)}>
                 <div>   

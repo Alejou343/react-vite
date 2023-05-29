@@ -64,35 +64,33 @@ const Navbar = () => {
             </ul>
 
             <ul className='flex item-center gap-3'>
-                <li>
-                    alejandro.auribe1@gmail.com
-                </li>
-                <li>
+                {context.active && <li>{context.dataBase[context.indice].email}</li>}
+                {context.active && <li>
                 <NavLink to = '/my-orders'
                 className = {({isActive}) => isActive ? activeStyle : undefined}
                 >
                     My Orders
                 </NavLink>
-                </li>
-                <li>
+                </li>}
+                {context.active && <li>
                 <NavLink to = '/my-account'
                 className = {({isActive}) => isActive ? activeStyle : undefined}
                 >
                     My Account
                 </NavLink>
-                </li>
-                <li>
+                </li>}
+                {!context.active && <li>
                 <NavLink to = '/sign-in'
                 className = {({isActive}) => isActive ? activeStyle : undefined}
                 >
                     Sign In
                 </NavLink>
-                </li>
-                <li>
+                </li>}
+                {context.active && <li>
                 <div onClick = {() => context.setOpenCart(true)} className="flex flex-row items-center">
                     <ShoppingCartIcon className="text-black-500 h-6 w-6 cursor-pointer" /> {context.counter} 
                 </div>
-                </li>
+                </li>}
             </ul>
         </nav>
     );

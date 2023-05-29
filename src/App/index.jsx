@@ -8,6 +8,7 @@ import { SignIn } from '../SignIn/index.jsx';
 import { NotFound } from '../NotFound/index.jsx';
 import { Navbar } from '../Components/Navbar/index.jsx';
 import { ShoppingCartProvider } from '../Context/index.jsx';
+import { SignUp } from '../SignUp/index.jsx';
 import './App.css';
 
 const AppRoutes = () => {
@@ -25,6 +26,7 @@ const AppRoutes = () => {
     {path: '/my-orders/:id', element: <MyOrder />},
     {path: '/my-orders', element: <MyOrders />},
     {path: '/sign-in', element: <SignIn />},
+    {path: 'sign-up', element: <SignUp />},
     {path: '/*', element: <NotFound />},
   ]);
   return routes

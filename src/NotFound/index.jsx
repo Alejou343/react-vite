@@ -1,13 +1,17 @@
 import React from 'react';
-import { Layout } from '../Components/Layout';
 
 const NotFound = () => {
     return (
-        <Layout>
-            <h1 className="mb-4 font-bold">
-                Not Found
-            </h1>
-        </Layout>
+            <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+                <h1 className="text-6xl font-bold text-gray-900">404</h1>
+                <p className="text-xl text-gray-700">Página no encontrada</p>
+                <a
+                    className="mt-4 text-blue-500 underline hover:text-blue-700"
+                    href="/"
+                >
+                    Volver a la página principal
+                </a>
+            </div>
     );
 }
 

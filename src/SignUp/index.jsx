@@ -8,12 +8,16 @@ const SignUp = () => {
     const context = React.useContext(ShoppingCartContext);
     const navigate = useNavigate();
 
+    if(context.active) {
+        navigate('/my-account')
+    }
+
+
     const createNewUser = (user, mail, password, e) => {
         e.preventDefault();
         context.dataBase.push({usuario: user, email: mail, contrasena: password})
         context.setDataBase([...context.dataBase]);
         navigate('/sign-in');
-        console.log(context.dataBase)
     }
 
     return (

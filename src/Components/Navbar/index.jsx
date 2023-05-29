@@ -12,7 +12,7 @@ const Navbar = () => {
     return (
         <nav className='flex justify-between items-center top-0 fixed z-10 w-full py-5 px-8 text-sm font-light bg-white'>
             <ul className='flex item-center gap-3'>
-                <li className='font-semibold text-lg'>
+                <li className='font-semibold text-lg text-blue-500'>
                 <NavLink to = '/'
                 className = {({isActive}) => isActive ? activeStyle : undefined}
                 >
@@ -64,7 +64,7 @@ const Navbar = () => {
             </ul>
 
             <ul className='flex item-center gap-3'>
-                {context.active && <li>{context.dataBase[context.indice].email}</li>}
+                {context.active && <li className="text-blue-300">{context.dataBase[context.indice].email}</li>}
                 {context.active && <li>
                 <NavLink to = '/my-orders'
                 className = {({isActive}) => isActive ? activeStyle : undefined}

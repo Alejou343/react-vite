@@ -8,6 +8,10 @@ const SignIn = () => {
     const context = React.useContext(ShoppingCartContext);
     const navigate = useNavigate();
 
+    if(context.active) {
+        navigate('/my-account')
+    }
+
     const login = (user, pass, e) => {
         e.preventDefault();
         const index = context.dataBase.findIndex(x => x.usuario === user);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { baseDatos } from '../DataBase/dataBase.js'
 
 const ShoppingCartContext = React.createContext();
 
@@ -39,7 +40,7 @@ const ShoppingCartProvider = ({ children }) => {
     const [newUsername, setNewUsername] = React.useState('');
     const [newEmail, setNewEmail] = React.useState('');
     const [newPassword, setNewPassword] = React.useState('');
-    const [dataBase, setDataBase] = React.useState([]);
+    const [dataBase, setDataBase] = React.useState(baseDatos);
 
     // Login user
 

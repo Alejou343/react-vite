@@ -9,9 +9,11 @@ import { NotFound } from '../NotFound/index.jsx';
 import { Navbar } from '../Components/Navbar/index.jsx';
 import { ShoppingCartProvider } from '../Context/index.jsx';
 import { SignUp } from '../SignUp/index.jsx';
+import { Forgot } from '../Forgot/index.jsx';
 import './App.css';
 
 const AppRoutes = () => {
+
   const routes = useRoutes([
     {path: '/', element: <Home />},
     {path: '/all', element: <Home />},
@@ -26,7 +28,8 @@ const AppRoutes = () => {
     {path: '/my-orders/:id', element: <MyOrder />},
     {path: '/my-orders', element: <MyOrders />},
     {path: '/sign-in', element: <SignIn />},
-    {path: 'sign-up', element: <SignUp />},
+    {path: '/sign-up', element: <SignUp />},
+    {path: '/forgot-password', element: <Forgot />},
     {path: '/*', element: <NotFound />},
   ]);
   return routes

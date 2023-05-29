@@ -8,6 +8,11 @@ const MyOrders = () => {
 
     const context = React.useContext(ShoppingCartContext);
 
+    if(!context.active) {
+        navigate('/sign-in')
+    }
+
+
     return (
         <Layout>
             <h1 className="mb-4 font-bold">

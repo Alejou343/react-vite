@@ -15,9 +15,18 @@ const SignUp = () => {
 
     const createNewUser = (user, mail, password, e) => {
         e.preventDefault();
-        context.dataBase.push({usuario: user, email: mail, contrasena: password})
-        context.setDataBase([...context.dataBase]);
-        navigate('/sign-in');
+        const newUser = {usuario: user, email: mail, contrasena: password}
+        if (context.dataBase.some(x => x.usuario === user) || context.dataBase.some(x => x.email === mail)) {
+            context.setMensaje('This username or email is already used');
+        } else {
+            context.dataBase.push(newUser)
+            context.setDataBase([...context.dataBase]);
+            context.setMensaje('Usuario creado con éxito, bienvenido: ' + user);
+            setTimeout(() => {
+                navigate('/sign-in');
+                context.setMensaje('');
+            }, 2000);
+        }
     }
 
     return (
@@ -53,6 +62,7 @@ const SignUp = () => {
                 </div>
                 <button type="submit" className="w-80 h-10 m-2 bg-black text-white rounded-lg font-bold">Create Account</button>
             </form>
+            <p className="text-red-500">{context.mensaje}</p>
         </Layout>
     );
 }

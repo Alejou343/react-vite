@@ -58,7 +58,7 @@ const SignIn = () => {
                 <Link to="/forgot-password">
                     <p className="text-center text-sm mt-2 mb-4">Forgot my password</p>
                 </Link>
-                <Link to="/sign-up">
+                <Link to="/sign-up" onClick={() => context.setMensaje('')}>
                     <button className="w-80 h-10 m-2 bg-white text-gray-500 rounded-lg border font-bold border-gray-400">Sign Up</button>
                 </Link>
             </div>

@@ -2,16 +2,12 @@ import React from 'react';
 import { Layout } from '../Components/Layout';
 import { ShoppingCartContext } from '../Context';
 import { Orderes } from '../Components/Orderes';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MyOrders = () => {
 
     const context = React.useContext(ShoppingCartContext);
-
-    if(!context.active) {
-        navigate('/sign-in')
-    }
-
+    const navigate = useNavigate();
 
     return (
         <Layout>

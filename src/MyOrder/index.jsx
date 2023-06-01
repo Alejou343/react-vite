@@ -25,10 +25,6 @@ const MyOrder = () => {
     const context = React.useContext(ShoppingCartContext);
     const navigate = useNavigate();
 
-    if(!context.active) {
-        navigate('/sign-in')
-    }
-
     const currentPath = window.location.pathname;
     let index = currentPath.substring(11);
 

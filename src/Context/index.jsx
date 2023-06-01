@@ -45,7 +45,7 @@ const ShoppingCartProvider = ({ children }) => {
     // Login user
 
     const [active, setActive] = React.useState(false);
-    const [indice, setIndice] = React.useState(-1);
+    const [cuentica, setCuentica] = React.useState({});
     
     React.useEffect(() => {
         fetch('https://api.escuelajs.co/api/v1/products')
@@ -84,8 +84,8 @@ const ShoppingCartProvider = ({ children }) => {
         newPassword,
         dataBase,
         active,
-        indice,
-        setIndice,
+        cuentica,
+        setCuentica,
         setActive,
         setDataBase,
         setNewPassword,

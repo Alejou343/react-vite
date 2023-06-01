@@ -22,8 +22,11 @@ const SignIn = () => {
                 context.setMensaje('');
                 
                 setTimeout(() => {
-                    context.setActive(true);
-                    context.setIndice(index);
+                    const acc = {usuario: user, email: context.dataBase[index].email, contrasena: pass}
+                    localStorage.setItem('cuenta', JSON.stringify(acc))
+                    localStorage.setItem('en-linea', JSON.stringify(true))
+                    context.setActive(JSON.stringify(localStorage.getItem('en-linea')));
+                    context.setCuentica(JSON.stringify(localStorage.getItem('cuenta')));
                     navigate('/my-account');
                 }, 2000);
 
